@@ -23,7 +23,7 @@ You only need `Initialize-ProjectMemory.ps1`. It has no dependencies and can
 live anywhere: this repo, a tools folder, or a copy inside each project.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/project-memory.git
+git clone https://github.com/mattkaplan314/project-memory.git
 ```
 
 You can also download the script file directly from GitHub.

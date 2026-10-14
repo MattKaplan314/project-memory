@@ -57,7 +57,7 @@ It's built around a few rules:
    self-contained file.
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/project-memory.git
+   git clone https://github.com/mattkaplan314/project-memory.git
    ```
 
 2. **Run it on your project** (new or existing folder):
