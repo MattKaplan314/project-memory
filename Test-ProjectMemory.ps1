@@ -19,13 +19,13 @@ $preview = Join-Path $testRoot 'preview'
 Assert-True (-not (Test-Path -LiteralPath $preview)) 'Preview wrote files.'
 Write-Output 'PASS: -WhatIf creates no project directory.'
 
-$fresh = Join-Path $testRoot 'game with spaces'
-& $initializer -Path $fresh -Name 'Test Game' | Out-Null
+$fresh = Join-Path $testRoot 'project with spaces'
+& $initializer -Path $fresh -Name 'Test Project' | Out-Null
 $newFiles = @(Get-ChildItem -LiteralPath $fresh -File -Recurse)
 Assert-True ($newFiles.Count -eq 8) 'Unexpected scaffold file count.'
 $statePath = Join-Path $fresh 'project-memory/STATE.md'
 $state = [System.IO.File]::ReadAllText($statePath)
-Assert-True ($state.Contains('Test Game')) 'Project name missing.'
+Assert-True ($state.Contains('Test Project')) 'Project name missing.'
 Assert-True ($state.Contains('not inspected')) 'Scaffold invents verified project state.'
 Assert-True (-not $state.Contains('{{')) 'Template token unresolved.'
 foreach ($entry in @('AGENTS.md', 'CLAUDE.md')) {
@@ -34,7 +34,7 @@ foreach ($entry in @('AGENTS.md', 'CLAUDE.md')) {
 }
 Write-Output 'PASS: new project with spaces gets eight files and honest initial state.'
 
-[System.IO.File]::AppendAllText($statePath, "`nUser's saved decision: keep the blue world.`n")
+[System.IO.File]::AppendAllText($statePath, "`nUser's saved decision: keep the blue theme.`n")
 $before = @{}
 foreach ($file in $newFiles) { $before[$file.FullName] = (Get-FileHash -LiteralPath $file.FullName).Hash }
 & $initializer -Path $fresh -Name 'Different Name' | Out-Null

@@ -43,7 +43,7 @@ You can also download the script file directly from GitHub.
 > only, without changing any machine setting:
 >
 > ```powershell
-> powershell -ExecutionPolicy Bypass -File ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\MyGame'
+> powershell -ExecutionPolicy Bypass -File ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\MyApp'
 > ```
 
 ## 2. Create the scaffold
@@ -62,7 +62,7 @@ You can also download the script file directly from GitHub.
 
 ```powershell
 # New project
-& ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\NewGame' -Name 'New Game'
+& ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\NewProject' -Name 'New Project'
 
 # Existing project, preview first
 & ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\ExistingApp' -WhatIf
@@ -79,7 +79,7 @@ Created: AGENTS.md
 Created: CLAUDE.md
 Created: project-memory/README.md
 ...
-Project: C:\Projects\NewGame
+Project: C:\Projects\NewProject
 Created 8 files; preserved 0 existing files.
 ```
 

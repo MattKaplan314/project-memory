@@ -2,9 +2,9 @@
 .SYNOPSIS
 Creates a portable shared project-memory scaffold without replacing files.
 .EXAMPLE
-& ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\NewGame' -Name 'New Game'
+& ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\NewProject' -Name 'New Project'
 .EXAMPLE
-& ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\ExistingGame' -WhatIf
+& ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\ExistingProject' -WhatIf
 #>
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
@@ -59,7 +59,7 @@ workflow. Read only the records relevant to the task.
 ## Finding context
 
 - `STATE.md`: current objective, active work, latest conversation pointers, gaps.
-- `PROJECT.md`: player/product promise, constraints, conventions, module map.
+- `PROJECT.md`: purpose, audience, constraints, conventions, module map.
 - `DECISIONS.md`: accepted decisions and superseded choices, with sources.
 - `discussions/`: topic records, including options and unresolved questions.
 - `activity/`: separate dated records of meaningful work and findings.
@@ -140,9 +140,9 @@ second option was or was not chosen. Check the answer against the saved discussi
 
 Status: unpopulated scaffold. Created: {{CREATED_UTC}}.
 
-- Project purpose / player promise: unknown.
+- Project purpose / value to users: unknown.
 - Intended audience and platform: unknown.
-- First playable or usable outcome: unknown.
+- First usable outcome: unknown.
 - Acceptance condition for that outcome: unknown.
 - Technical stack and launch commands: unknown.
 - Design and visual references: unknown.
@@ -217,7 +217,7 @@ Related discussion and evidence:
 # Topic discussions
 
 Create one descriptive Markdown file per active topic, for example
-`world-layout.md`. Link it from ../STATE.md. Keep decision-relevant detail and
+`api-design.md`. Link it from ../STATE.md. Keep decision-relevant detail and
 exact option labels so another model can answer a follow-up without a handoff.
 
 ```text

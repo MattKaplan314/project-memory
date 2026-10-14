@@ -63,7 +63,7 @@ It's built around a few rules:
 2. **Run it on your project** (new or existing folder):
 
    ```powershell
-   & ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\MyGame' -Name 'My Game'
+   & ./Initialize-ProjectMemory.ps1 -Path 'C:\Projects\MyApp' -Name 'My App'
    ```
 
    Add `-WhatIf` to preview without writing anything.
